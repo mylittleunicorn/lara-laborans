@@ -138,8 +138,8 @@
                     <x-bx-menu class="w-8 h-8  text-blue-500"/>
                 </button>
             </div>
-            <div >
-                <a href="">asdasdasds</a>
+            <div class="p-2 md:p-4">
+                @yield('content')
             </div>
         </div>
     </div>

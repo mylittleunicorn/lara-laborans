@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProgramStudyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(ProgramStudyController::class)->group(function () {
+    Route::get('/programstudy', 'index');
+    Route::get('/programstudy/{id}', 'show');
+    Route::post('/orders', 'store');
 });
