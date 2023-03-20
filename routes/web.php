@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProgramStudyController;
+use App\Http\Controllers\LabController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,4 +22,10 @@ Route::controller(ProgramStudyController::class)->group(function () {
     Route::get('/programstudy', 'index')->name('programstudy.index');
     Route::get('/programstudy/create', 'create')->name('programstudy.create');
     Route::post('/programstudy', 'store')->name('programstudy.store');
+});
+
+Route::controller(LabController::class)->group(function () {
+    Route::get('/lab', 'index')->name('lab.index');
+    Route::get('/lab/create', 'create')->name('lab.create');
+    Route::post('/lab', 'store')->name('lab.store');
 });

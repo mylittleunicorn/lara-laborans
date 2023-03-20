@@ -44,24 +44,38 @@
         </div>
     </div>
 </div>
+
 <div class="grid md:grid-cols-2 gap-4">
     <div class="static overflow-x-auto shadow-xl p-4 mx-4 mt-4 mb-6">
-        <form action="{{ route('programstudy.store') }}" method="POST">
+        <form action="{{ route('lab.store') }}" method="POST">
         @csrf
         <div class="text-gray-700 mb-6">
-            <label class="block mb-1" for="program_study_name">Program Study Name</label>
-            <input name="program_study_name" class="w-full h-10 px-3 text-base border-b-2 focus:outline-none focus:border-blue-600" type="text" id="program_study_name" aria-describedby="passwordHelp"/>
-            @error('program_study_name')
-                <span class="text-xs text-red-600" id="program_study_name">{{ $message }}</span>
+            <label class="block mb-1" for="program_study_id">Program Study</label>
+            <select class="w-full h-10 px-3 text-base border-b-2 focus:outline-none focus:border-teal-600" name="program_study_id" id="">
+            @foreach ( $programstudies as $programstudy )
+                <option class="h-10 px-3 hover:bg-teal-500" value="{{ $programstudy->id }}">
+                    {{ $programstudy->program_study_name }}
+                </option>
+            @endforeach
+            </select>
+            @error('program_study_id')
+                <span class="text-xs text-red-600" id="program_studies_slug">{{ $message }}</span>
             @enderror
         </div>
         <div class="text-gray-700 mb-6">
-            <label class="block mb-1" for="program_study_description">Program Study Description</label>
-            <input name="program_study_description" class="w-full h-10 px-3 text-base border-b-2 focus:outline-none focus:border-teal-600" type="text" id="program_study_description" aria-describedby="passwordHelp"/>
-            @error('program_study_description')
-                <span class="text-xs text-red-600" id="program_study_description">{{ $message }}</span>
+            <label class="block mb-1" for="lab_name">Lab Name</label>
+            <input name="lab_name" class="w-full h-10 px-3 text-base border-b-2 focus:outline-none focus:border-teal-600" type="text" id="lab_name" aria-describedby="passwordHelp"/>
+            @error('lab_name')
+                <span class="text-xs text-red-600" id="lab_name">{{ $message }}</span>
             @enderror
             
+        </div>
+        <div class="text-gray-700 mb-6">
+            <label class="block mb-1" for="lab_description">Lab Description</label>
+            <input name="lab_description" class="w-full h-10 px-3 text-base border-b-2 focus:outline-none focus:border-teal-600" type="text" id="lab_description" aria-describedby="passwordHelp"/>
+            @error('lab_description')
+                <span class="text-xs text-red-600" id="lab_description">{{ $message }}</span>
+            @enderror
         </div>
         <button type="submit" class="text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">Add Program Study</button>
         </form>

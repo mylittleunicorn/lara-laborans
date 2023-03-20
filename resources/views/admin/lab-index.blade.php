@@ -82,6 +82,9 @@
                     PROGRAM STUDY NAME
                 </th>
                 <th scope="col" class="px-5 py-3">
+                    LAB NAME
+                </th>
+                <th scope="col" class="px-5 py-3">
                     DESCRIPTION
                 </th>
                 <th scope="col" class="px-5 py-3">
@@ -90,16 +93,19 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($programstudies as $programstudy)
+            @foreach ($labs as $lab)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-50 dark:hover:bg-blue-600">
                 <td class="px-6 py-4">
-                    {{ $programstudy->id }}
+                    {{ $lab->id }}
                 </td>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {{ $programstudy->program_study_name }}
+                    {{ $lab->program_study_name }}
                 </th>
                 <td class="px-6 py-4">
-                    {{ $programstudy->program_study_description }}
+                    {{ $lab->lab->first()->lab_name }}
+                </td>
+                <td class="px-6 py-4">
+                    {{ $lab->lab->first()->lab_description }}
                 </td>
                 <td class="px-6 py-4 text-right">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>

@@ -21,8 +21,8 @@ class ProgramStudyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'program_studies_name' => 'required|unique:program_studies',
-            'program_studies_slug' => 'required',
+            'program_study_name' => 'required|unique:program_studies',
+            'program_study_description' => 'required',
         ]);
         ProgramStudy::create($request->post());
 
