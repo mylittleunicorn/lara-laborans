@@ -10,11 +10,11 @@
     <div class="flex">
         <div
         id="sidenav" 
-        class="absolute overflow-y-scroll md:relative top-0 w-64 h-screen bg-white border-r border-gray-200 ">
+        class="absolute hidden md:block overflow-y-scroll md:relative top-0 w-64 h-screen bg-white border-r border-gray-200 ">
             <div class="flex flex-row items-center justify-center py-3">
                 <h1 class="text-lg font-bold text-gray-800 dark:text-gray-200">Laborans</h1>
             </div>
-            <div class=" text-gray-500 dark:text-gray-400">
+            <div class=" bg-white text-gray-500 dark:text-gray-400">
                 <ul class="mt-6">
                   <li class="relative px-6 py-3">
                     <span class="absolute inset-y-0 left-0 w-1 bg-blue-500 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
@@ -143,6 +143,7 @@
             </div>
         </div>
     </div>
+    @yield('script')
     <script type="module">
         $(document).ready(function(){
             $("#side").click(function(e){

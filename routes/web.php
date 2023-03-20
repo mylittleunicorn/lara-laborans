@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::controller(ProgramStudyController::class)->group(function () {
-    Route::get('/programstudy', 'index');
-    Route::get('/programstudy/{id}', 'show');
-    Route::post('/orders', 'store');
+    Route::get('/programstudy', 'index')->name('programstudy.index');
+    Route::get('/programstudy/create', 'create')->name('programstudy.create');
+    Route::post('/programstudy', 'store')->name('programstudy.store');
 });
