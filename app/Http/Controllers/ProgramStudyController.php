@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\ProgramStudy;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,14 +9,14 @@ use Illuminate\Http\Request;
 class ProgramStudyController extends Controller
 {
     public function index()
-    {   
-        $programstudies = ProgramStudy::orderBy('id','desc')->paginate(10);
-        return view('admin.programstudy-index', compact('programstudies'));
+    {
+        $programstudies = ProgramStudy::orderBy('id', 'desc')->paginate(10);
+        return view('admin.programstudy.programstudy-index', compact('programstudies'));
     }
 
-    public function create() 
+    public function create()
     {
-        return view('admin.programstudy-create');
+        return view('admin.programstudy.programstudy-create');
     }
 
     public function store(Request $request)
@@ -26,7 +27,6 @@ class ProgramStudyController extends Controller
         ]);
         ProgramStudy::create($request->post());
 
-        return redirect()->route('programstudy.index')->with('success','Company has been created successfully.');
+        return redirect()->route('programstudy.index')->with('success', 'Company has been created successfully.');
     }
-
 }
