@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('lab_name');
             $table->text('lab_description');
-            $table->foreignId('program_study_id');
+            $table->unsignedBigInteger('program_study_id');
+            $table->foreign('program_study_id')->references('id')->on('program_studies');
             $table->timestamps();
         });
     }

@@ -1,89 +1,188 @@
 @extends('admin.dashboard.index')
 @section('content')
 
+<!-- BARIS KE-1 -->
+<div class="m-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
 
 
+  <!-- card -->
+  <div class="report-card border border-gray-200 rounded-sm hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+    <div class="card">
+      <div class="card-body flex flex-col p-5">
 
-<div class="w-full">
-  <div class="relative pt-4 bg-blueGray-500">
-    <div class="px-4 md:px-6 mx-auto w-full">
-      <div>
-        <div class="flex flex-wrap">
-          <div class="w-full lg:w-4/12 xl:w-3/12 px-4">
-            <div class="relative flex flex-col min-w-0 break-words bg-white rounded-lg mb-6 xl:mb-0 shadow-lg">
-              <div class="flex-auto p-4">
-                <div class="flex flex-wrap">
-                  <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                    <h5 class="text-blueGray-400 uppercase font-bold text-xs">Program Study</h5>
-                    <span class="font-bold text-xl">350,897</span>
-                  </div>
-                  <div class="relative w-auto pl-4 flex-initial">
-                    <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-teal-500"><i class="far fa-chart-bar"></i></div>
-                  </div>
-                </div>
-                <p class="text-sm text-blueGray-500 mt-4"><span class="text-emerald-500 mr-2"><i class="fas fa-arrow-up"></i> 3.48%</span><span class="whitespace-nowrap">Since last month</span></p>
-              </div>
-            </div>
-          </div>
-          <div class="w-full lg:w-4/12 xl:w-3/12 px-4">
-            <div class="relative flex flex-col min-w-0 break-words bg-white rounded-lg mb-6 xl:mb-0 shadow-lg">
-              <div class="flex-auto p-4">
-                <div class="flex flex-wrap">
-                  <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                    <h5 class="text-blueGray-400 uppercase font-bold text-xs">Lab</h5>
-                    <span class="font-bold text-xl">4</span>
-                  </div>
-                  <div class="relative w-auto pl-4 flex-initial">
-                    <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-teal-500"><i class="fas fa-chart-pie"></i></div>
-                  </div>
-                </div>
-                <p class="text-sm text-blueGray-500 mt-4"><span class="text-red-500 mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span><span class="whitespace-nowrap">Since last week</span></p>
-              </div>
-            </div>
-          </div>
-          <div class="w-full lg:w-4/12 xl:w-3/12 px-4">
-            <div class="relative flex flex-col min-w-0 break-words bg-white rounded-lg mb-6 xl:mb-0 shadow-lg">
-              <div class="flex-auto p-4">
-                <div class="flex flex-wrap">
-                  <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                    <h5 class="text-blueGray-400 uppercase font-bold text-xs">Items</h5>
-                    <span class="font-bold text-xl">924</span>
-                  </div>
-                  <div class="relative w-auto pl-4 flex-initial">
-                    <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-teal-500"><i class="fas fa-users"></i></div>
-                  </div>
-                </div>
-                <p class="text-sm text-blueGray-500 mt-4"><span class="text-orange-500 mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span><span class="whitespace-nowrap">Since yesterday</span></p>
-              </div>
-            </div>
-          </div>
+        <!-- top -->
+        <div class="flex flex-row justify-between items-center">
+          <div class="h6 text-teal-400"><x-bxl-microsoft class="  w-10 h-10" /></div>
+          <span class="rounded-full text-white badge bg-teal-400 text-xs px-2 py-1">
+            12%
+            <i class="fal fa-chevron-up ml-1"></i>
+          </span>
         </div>
+        <!-- end top -->
+
+        <!-- bottom -->
+        <div class="mt-8">
+          <h1 class="h5 num-4 font-extrabold">6571</h1>
+          <p>Program Study</p>
+        </div>
+        <!-- end bottom -->
+
       </div>
     </div>
+
+  </div>
+  <!-- end card -->
+
+  <!-- card -->
+  <div class="report-card border border-gray-200 rounded-sm hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+    <div class="card">
+      <div class="card-body flex flex-col p-5">
+
+        <!-- top -->
+        <div class="flex flex-row justify-between items-center">
+          <div class="h6 text-red-400"><x-bxl-dev-to class="  w-10 h-10" /></div>
+          <span class="rounded-full text-white badge bg-red-400 text-xs px-2 py-1">
+            12%
+            <i class="fal fa-chevron-up ml-1"></i>
+          </span>
+        </div>
+        <!-- end top -->
+
+        <!-- bottom -->
+        <div class="mt-8">
+          <h1 class="h5 num-4 font-extrabold">6571</h1>
+          <p>Lab</p>
+        </div>
+        <!-- end bottom -->
+
+      </div>
+    </div>
+
+  </div>
+  <!-- end card -->
+
+  <!-- card -->
+  <div class="report-card border border-gray-200 rounded-sm hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+    <div class="card">
+      <div class="card-body flex flex-col p-5">
+
+        <!-- top -->
+        <div class="flex flex-row justify-between items-center">
+          <div class="h6 text-yellow-600"><x-bxl-slack class="  w-10 h-10" /></div>
+          <span class="rounded-full text-white badge bg-yellow-400 text-xs px-2 py-1">
+            12%
+            <i class="fal fa-chevron-up ml-1"></i>
+          </span>
+        </div>
+        <!-- end top -->
+
+        <!-- bottom -->
+        <div class="mt-8">
+          <h1 class="h5 num-4 font-extrabold">6571</h1>
+          <p>items</p>
+        </div>
+        <!-- end bottom -->
+
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+<!-- BARIS KE-2 -->
+<div class="mt-6 mx-6 grid grid-cols-1 gap-6 xl:grid-cols-1">
+
+  <!-- update section -->
+  <div class="card bg-teal-400 border-teal-400 shadow-md text-white">
+    <div class="card-body flex flex-row">
+
+      <!-- image -->
+      <div class="img-wrapper w-40 h-40 flex justify-center items-center">
+        <img src="./img/happy.svg" alt="img title">
+      </div>
+      <!-- end image -->
+
+      <!-- info -->
+      <div class="py-2 ml-10">
+        <h1 class="h6">Good Job, Mohamed!</h1>
+        <p class="text-white text-xs">You've finished all of your tasks for this week.</p>
+
+        <ul class="mt-4">
+          <li class="text-sm font-light"><i class="fad fa-check-double mr-2 mb-2"></i> Finish Dashboard Design</li>
+          <li class="text-sm font-light"><i class="fad fa-check-double mr-2 mb-2"></i> Fix Issue #74</li>
+          <li class="text-sm font-light"><i class="fad fa-check-double mr-2"></i> Publish version 1.0.6</li>
+        </ul>
+      </div>
+      <!-- end info -->
+
+    </div>
+  </div>
+  <!-- end update section -->
+
+
+
+</div>
+
+<!-- BARIS KE-3 -->
+<div class="mt-6 mx-6 grid grid-cols-1 gap-6 xl:grid-cols-1">
+  <div class="card border">
+    <div class="card-header p-4 border">New Items</div>
+
+    <table class="table-auto w-full text-left">
+      <thead>
+        <tr>
+          <th class="px-4 py-2 border-r"></th>
+          <th class="px-4 py-2 border-r">Name</th>
+          <th class="px-4 py-2 border-r">Qty</th>
+          <th class="px-4 py-2 border-r">Lab</th>
+          <th class="px-4 py-2">date</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-600">
+
+        <tr>
+          <td class="border border-l-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
+          <td class="border border-l-0 px-4 py-2">Lightning to USB-C Adapter Lightning.</td>
+          <td class="border border-l-0 px-4 py-2">$<span class="num-2">40</span></td>
+          <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2">74</span> minutes ago</td>
+        </tr>
+        <tr>
+          <td class="border border-l-0 px-4 py-2 text-center text-yellow-500"><i class="fad fa-circle"></i></td>
+          <td class="border border-l-0 px-4 py-2">Apple iPhone 8.</td>
+          <td class="border border-l-0 px-4 py-2">$<span class="num-2">30</span></td>
+          <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2">18</span> minutes ago</td>
+        </tr>
+        <tr>
+          <td class="border border-l-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
+          <td class="border border-l-0 px-4 py-2">Apple MacBook Pro.</td>
+          <td class="border border-l-0 px-4 py-2">$<span class="num-2">15</span></td>
+          <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2">66</span> minutes ago</td>
+        </tr>
+        <tr>
+          <td class="border border-l-0 px-4 py-2 text-center text-red-500"><i class="fad fa-circle"></i></td>
+          <td class="border border-l-0 px-4 py-2">Samsung Galaxy S9.</td>
+          <td class="border border-l-0 px-4 py-2">$<span class="num-2">99</span></td>
+          <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2">71</span> minutes ago</td>
+        </tr>
+        <tr>
+          <td class="border border-l-0 px-4 py-2 text-center text-yellow-500"><i class="fad fa-circle"></i></td>
+          <td class="border border-l-0 px-4 py-2">Samsung Galaxy S8 256GB.</td>
+          <td class="border border-l-0 px-4 py-2">$<span class="num-2">73</span></td>
+          <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2">52</span> minutes ago</td>
+        </tr>
+        <tr>
+          <td class="border border-l-0 border-b-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
+          <td class="border border-l-0 border-b-0 px-4 py-2">apple watch.</td>
+          <td class="border border-l-0 border-b-0 px-4 py-2">$<span class="num-2">19</span></td>
+          <td class="border border-l-0 border-b-0 border-r-0 px-4 py-2"><span class="num-2">32</span> minutes ago</td>
+        </tr>
+
+      </tbody>
+    </table>
   </div>
 </div>
 
-<section class="my-4">
-  <div class="grid md:grid-cols-2 gap-4">
-    <!-- CARD PROGRAM STUDY -->
-    <div>
-      <a href="#" class="block p-6 bg-white border border-gray-200 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-      </a>
-    </div>
-
-    <div>
-      <a href="#" class="block p-6 bg-white border border-gray-200 border-0 shadow-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-      </a>
-    </div>
-
-  </div>
-
-
-  </div>
-</section>
 
 @endsection

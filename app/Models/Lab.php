@@ -5,21 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 class Lab extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['lab_name', 'lab_description', 'program_study_id'];
+    protected $table = 'labs';
 
-    public function programstudy(): BelongsTo
-    {   
-        return $this->belongsTo(ProgramStudy::class);
-    }
+    protected $fillable = [
+        'lab_name',
+        'lab_description',
+        'program_study_id'
+    ];
 
-    public function lab(): HasMany
+    public function programstudy()
     {
-        return $this->hasMany(Lab::class);
+        return $this->belongsTo(ProgramStudy::class, 'program_study_id', 'id');
     }
 }

@@ -5,12 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite(['resources/css/app.css', 'resources/js/app.js'])
+  @bukStyles
 
 </head>
 
 <body>
   <div class="flex">
-    <div id="sidenav" class="absolute hidden md:block overflow-y-scroll md:relative top-0 w-64 h-screen bg-white border-r border-gray-200 ">
+    <div id="sidenav" class="absolute hidden md:block  md:relative top-0 w-64 h-screen bg-white border-r border-gray-200 ">
       <div class="flex flex-row items-center justify-center py-3">
         <h1 class="text-lg font-bold text-gray-800 dark:text-gray-200">Laborans</h1>
       </div>
@@ -130,6 +131,7 @@
       </div>
     </div>
   </div>
+  @bukScripts
   @yield('script')
   <script type="module">
     $(document).ready(function() {

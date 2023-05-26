@@ -8,10 +8,18 @@ Route::get('/', function () {
     return view('admin.dashboard.home');
 })->name('dashboard.index');
 
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
+Route::get('/signup', function () {
+    return view('signup');
+})->name('signup');
+
 Route::prefix('programstudy')->group(function () {
     Route::controller(ProgramStudyController::class)->group(function () {
         Route::get('/', 'index')->name('programstudy.index');
-        Route::get('create', 'create')->name('programstudy.create');
+        Route::get('/create', 'create')->name('programstudy.create');
         Route::post('/', 'store')->name('programstudy.store');
     });
 });

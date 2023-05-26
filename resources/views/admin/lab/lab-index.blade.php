@@ -7,11 +7,11 @@
       <nav class="flex mb-5" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2">
           <li class="inline-flex items-center">
-            <a href="#" class="inline-flex items-center text-gray-700 hover:text-gray-900">
+            <a href="{{ route('dashboard.index')}}" class="inline-flex items-center text-gray-700 hover:text-gray-900">
               <svg class="w-5 h-5 mr-2.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
               </svg>
-              Dashboard
+              <span class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2">Dashboard</span>
             </a>
           </li>
           <li>
@@ -19,7 +19,7 @@
               <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
               </svg>
-              <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2">E-commerce</a>
+              <a href="{{ route('lab.index') }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2">Labs</a>
             </div>
           </li>
           <li>
@@ -27,21 +27,21 @@
               <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
               </svg>
-              <span class="ml-1 text-sm font-medium text-gray-400 md:ml-2" aria-current="page">Products</span>
+              <span class="ml-1 text-sm font-medium text-gray-400 md:ml-2" aria-current="page">List</span>
             </div>
           </li>
         </ol>
       </nav>
       {{-- BREADCRUMB --}}
 
-      <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl">All products</h1>
+      <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl">All Labs</h1>
     </div>
 
     <div class="block items-center sm:flex md:divide-x md:divide-gray-100">
       <form class="mb-4 sm:pr-3 sm:mb-0" action="#" method="GET">
         <label for="products-search" class="sr-only">Search</label>
         <div class="static mt-1 sm:w-64 xl:w-96">
-          <input type="text" name="email" id="products-search" class=" text-gray-900 sm:text-sm border-b-2 focus:outline-none focus:border-teal-600  block w-full p-2.5" placeholder="Search for products">
+          <input type="text" name="email" id="products-search" class=" text-gray-900 sm:text-sm border-b-2 focus:outline-none focus:border-teal-600  block w-full p-2.5" placeholder="Search for Labs">
         </div>
       </form>
       <div class="flex items-center w-full sm:justify-end">
@@ -67,12 +67,14 @@
             </svg>
           </a>
         </div>
-        <button type="button" data-modal-toggle="add-product-modal" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-gradient-to-br from-teal-500 to-voilet-500 sm:ml-auto shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform">
-          <svg class="mr-2 -ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
-          </svg>
-          Add product
-        </button>
+        <a href="{{ route('lab.create')}}" class="sm:ml-auto">
+          <button type="button" data-modal-toggle="add-product-modal" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-gradient-to-br from-teal-500 to-voilet-500 sm:ml-auto shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform">
+            <svg class="mr-2 -ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
+            </svg>
+            Add Labs
+          </button>
+        </a>
       </div>
     </div>
   </div>
@@ -97,10 +99,10 @@
           ID
         </th>
         <th scope="col" class="px-5 py-3">
-          PROGRAM STUDY NAME
+          LAB NAME
         </th>
         <th scope="col" class="px-5 py-3">
-          LAB NAME
+          PROGRAM STUDY NAME
         </th>
         <th scope="col" class="px-5 py-3">
           DESCRIPTION
@@ -117,13 +119,14 @@
           {{ $lab->id }}
         </td>
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          {{ $lab->program_study_name }}
+          {{ $lab->lab_name }}
         </th>
         <td class="px-6 py-4">
-          {{ $lab->lab->first()->lab_name }}
+
+          {{ $lab->programstudy->program_study_name}}
         </td>
         <td class="px-6 py-4">
-          {{ $lab->lab->first()->lab_description }}
+          {{ $lab->lab_description }}
         </td>
         <td class="px-6 py-4 text-right">
           <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>

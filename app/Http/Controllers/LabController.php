@@ -12,14 +12,14 @@ class LabController extends Controller
 {
   public function index()
   {
-    $labs = ProgramStudy::with('lab')->get();
+    $labs = Lab::with('programstudy')->get();
     return view('admin.lab.lab-index', compact('labs'));
   }
 
   public function create()
   {
     $programstudies = DB::table('program_studies')->select('id', 'program_study_name')->get();
-    return view('admin.lab-create', compact('programstudies'));
+    return view('admin.lab.lab-create', compact('programstudies'));
   }
 
   public function store(Request $request)
@@ -31,6 +31,6 @@ class LabController extends Controller
     ]);
     Lab::create($request->post());
 
-    return redirect()->route('programstudy.index')->with('success', 'Company has been created successfully.');
+    return redirect()->route('labs.index')->with('success', 'Company has been created successfully.');
   }
 }
